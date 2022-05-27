@@ -1,13 +1,23 @@
 import './App.css';
+import Game from './components/Game';
 
 function App() 
 { 
   
   return (
     <div className="App">
-        <h3>
-          Srng :-)
-        </h3>
+        <Game />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <h1>
+        🔥
+        </h1>
+
     </div>
   );
 }

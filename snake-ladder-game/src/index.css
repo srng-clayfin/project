@@ -76,7 +76,6 @@ code {
 
 .Game
 {
-
   text-align: center;
   display: grid;
   grid-template-columns: 70% 30%;

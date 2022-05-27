@@ -50,7 +50,7 @@ function Game()
     {
       setPlace(72);
     }
-    else if(place === 89 || place===46 )
+    else if(place === 89 || place===46 || place===97 )
     {
       setPlace(1);
     }
