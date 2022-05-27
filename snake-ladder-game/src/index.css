@@ -20,7 +20,8 @@ code {
   margin-left: 10px;
   margin-top: 10px;
 
-  background-image: url("./Img/snakeladder.png");
+  background-image: url("./Img/snake1.jpeg");
+  background-size: 100% 100%;
 
   border: 1px solid black;
 

@@ -1,35 +1,47 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Main } from './components/Main';
 
 function App() 
-{
- 
+{ 
   const [count,setCount]  = useState(0);  
   const [place,setPlace] = useState(1)
+//   useEffect(()=>{
+    
+//     console.log('place changed',place);
+// },[place]);
+  if(place >= 100)
+  {
+    alert("Win => 👑");    
+    setPlace(1);    
+  }
+    
   
+
   const handledice = () =>
   {
-    setCount(Math.floor(Math.random() * 6));
-    setPlace(place+count);
-
-    if(place === 70)
+    setCount(0 + Math.floor(1 + Math.random() * 6));
+    setPlace(place + count);
+ 
+    if(place === 69)
     {
-      setPlace(97);
+      setPlace(88);
     }    
-    else if(place === 66)
+    else if(place === 67)
     {
-      setPlace(28);
+      setPlace(48);
     }
-    else if(place === 85)
+    else if(place === 14)
     {
-      setPlace(31);
+      setPlace(54);
     }
-    else if(place === 4)
+    else if(place === 42)
     {
-      setPlace(55);
+      setPlace(11);
     }
   }
+
+  
   
   return (
     <div className="App">
@@ -37,15 +49,16 @@ function App()
       <Main place={place}/>
 
       <div className='button'>
-        <button onClick={handledice}>
+        <button onClick={() => handledice()}>
             Dice
         </button>
-        <br />
-        <br />
+          <br />
+          <br />
         <h2>
           {count}
         </h2>        
       </div>
+
     </div>
   );
 }

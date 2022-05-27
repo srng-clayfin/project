@@ -1,8 +1,13 @@
+import React,{ useEffect } from "react";
 
 
-export const Block = (p) =>
+const Block = (p) =>
 {
-    console.log(p)
+     
+    useEffect(()=>{
+        console.log('place changed',p.place);
+    },[p.place]);
+   
 
     return(
         <div className="block">
@@ -13,9 +18,11 @@ export const Block = (p) =>
                 : 
                 <h3>{p.value}</h3>
             }                      
+            
         </div>
             
         
     )
 
 }
+export default Block;
