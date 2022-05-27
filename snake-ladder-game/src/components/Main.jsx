@@ -3,7 +3,7 @@ import Block  from "./Block"
 
 export const Main = (p) =>
 {   
-   
+   console.log(p.place);
     return(<>
         <div className="mainblock">
         {

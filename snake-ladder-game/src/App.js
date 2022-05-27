@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Main } from './components/Main';
 
@@ -6,6 +6,12 @@ function App()
 { 
   const [count,setCount]  = useState(0);  
   const [place,setPlace] = useState(1)
+
+  useEffect(
+      ()=>{
+        setPlace(count+place);
+      },[count]
+    );
 
   if(place >= 100)
   {
@@ -18,7 +24,7 @@ function App()
   const handledice = () =>
   {
     setCount(0 + Math.floor(1 + Math.random() * 6));
-    setPlace(place + count);
+    //setPlace(place + count);
  
     if(place === 69)
     {
