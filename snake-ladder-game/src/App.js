@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { Main } from './components/Main';
 
@@ -6,10 +6,7 @@ function App()
 { 
   const [count,setCount]  = useState(0);  
   const [place,setPlace] = useState(1)
-//   useEffect(()=>{
-    
-//     console.log('place changed',place);
-// },[place]);
+
   if(place >= 100)
   {
     alert("Win => 👑");    

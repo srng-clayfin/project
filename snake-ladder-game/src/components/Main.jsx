@@ -1,11 +1,8 @@
-import { useEffect } from "react"
+
 import Block  from "./Block"
 
 export const Main = (p) =>
-{      
-    useEffect(()=>{
-        console.log('place changed',p.place);
-    },[p.place]);
+{   
    
     return(<>
         <div className="mainblock">
