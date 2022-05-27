@@ -42,6 +42,16 @@ function App()
     {
       setPlace(11);
     }
+    else if(place === 72)
+    {
+      setPlace(28);
+    }    
+    else if(place === 28)
+    {
+      setPlace(72);
+    }
+
+
   }
 
   

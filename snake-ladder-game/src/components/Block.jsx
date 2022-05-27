@@ -5,16 +5,9 @@ import Background from '../Img/teleport.png'
 const Block = (p) =>
 {   
 
-    // //28 , 73
-
-    // {(p.value === 28 )|| (p.value === 73)?
-            
-    //     :
-    //     null  
-    //  } 
 
     return(
-        <div className="block" style={{backgroundImage : p.value==28 || p.value==72 ? "url(" + { Background } + ")" : ""}} >       
+        <div className="block" style={{backgroundColor : p.value==28 || p.value==72 ? "#72FE8E" : p.value==46 || p.value==89 ? "#FE7A7A" : ""}} >       
             { p.user === p.value ? 
                 <h4>
                     😈
