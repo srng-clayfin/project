@@ -1,5 +1,4 @@
 import React from "react";
-import Background from '../Img/teleport.png'
 
 
 const Block = (p) =>

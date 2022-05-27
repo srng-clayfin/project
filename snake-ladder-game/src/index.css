@@ -17,8 +17,8 @@ code {
 {
   height: 600px;
   width: 700px;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 30px;
+  margin-top: 20px;
 
   background-image: url("./Img/snake1.jpeg");
   background-size: 100% 100%;
@@ -50,4 +50,34 @@ code {
 .button
 {
   margin-top: 20%;
+}
+
+.button > button
+{
+  height: 50px;
+  width: 100px;
+  margin-left: -320px;
+
+  font-size: larger;
+}
+
+.count
+{
+  height: 150px;
+  width: 150px;
+
+  background-color: rgb(187, 238, 255);
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 50%;
+
+  font-size: 24px;
+
+}
+
+.Game
+{
+
+  text-align: center;
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
