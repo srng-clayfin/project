@@ -16,19 +16,36 @@ function Game()
   const user2 = "Swti";
 
   const [diceuser,setDiceUser] = useState(user1);
+
+  if(place == 100)
+  {
+    alert(user1+"  Win");
+    setPlace(1);
+    setPlace1(1);
+  }
+  else if(place1 == 100)
+  {
+    alert(user2+"  Win");
+    setPlace(1);
+    setPlace1(1);
+  }
   
   useEffect(
       ()=>{
-        setPlace(count1+place);
-        console.log(flag);
-      },[count1,flag]
+        if(flag == true)
+        {
+          setPlace(count1+place);
+          console.log(flag);
+        }
+        else
+        {
+          setPlace1(count2+place);
+          console.log(flag);
+        }
+      },[count1,flag,count2]
     );
 
-  if(place >= 100)
-  {
-    alert("Win => 👑");    
-    setPlace(1);    
-  }
+  
   
 
   const handledice = () =>
@@ -36,9 +53,11 @@ function Game()
     diceuser==user1 ? setDiceUser(user2) : setDiceUser(user1)
     setFlag(flag===true ? false : true);
 
+    let dice = Math.floor(Math.random() * (6 - 1 + 1) + 1)
+
     if(flag == true)
     {      
-      setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
+      setCount1(dice);  
       
       if(place === 69)
       {
@@ -69,42 +88,43 @@ function Game()
         setPlace(1);
       }
     }
+    else
+    {
+      setCount2(dice);  
+      
+      if(place1 === 69)
+      {
+        setPlace1(88);
+      }    
+      else if(place1 === 67)
+      {
+        setPlace1(48);
+      }
+      else if(place1 === 14)
+      {
+        setPlace1(54);
+      }
+      else if(place1 === 42)
+      {
+        setPlace1(11);
+      }
+      else if(place1 === 72)
+      {
+        setPlace1(28);
+      }    
+      else if(place1 === 28)
+      {
+        setPlace1(72);
+      }
+      else if(place1 === 89 || place1===46 || place1===97 )
+      {
+        setPlace1(1);
+      }
+    }
     
-    //setPlace(place + count1);
-
-
     
     //==================================================
-    if(place1 === 69)
-    {
-      setPlace1(88);
-    }    
-    else if(place1 === 67)
-    {
-      setPlace1(48);
-    }
-    else if(place1 === 14)
-    {
-      setPlace1(54);
-    }
-    else if(place1 === 42)
-    {
-      setPlace1(11);
-    }
-    else if(place1 === 72)
-    {
-      setPlace1(28);
-    }    
-    else if(place1 === 28)
-    {
-      setPlace1(72);
-    }
-    else if(place1 === 89 || place1===46 || place1===97 )
-    {
-      setPlace1(1);
-    }
-
-
+    
   }
 
   
@@ -112,7 +132,7 @@ function Game()
   return (
     <div className="Game">
 
-      <Main place={place}/>
+      <Main place={place} place1={place1}/>
 
       <div className='button'>
         <button onClick={() => handledice()}>
@@ -122,7 +142,13 @@ function Game()
         <br />
         <br />
           <div className='count'>
-            <h1>{count1}</h1>
+            <h1>
+            
+            {/* {flag==true? user2 : user1}
+            <br /> */}
+
+            {count1}
+            </h1>
           </div>       
       </div>
     </div>
