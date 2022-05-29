@@ -22,7 +22,7 @@ export const USer = () =>
                 <br />
                 <br />
      
-                    <button onClick={() => console.log(user1+"  "+user2)     }>
+                    <button onClick={() => console.log(user1+"  "+user2)    }>
                             Start Game
                     </button>
                 
