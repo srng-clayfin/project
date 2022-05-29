@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "np": "^7.6.1"
+  },
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srng-clayfin/project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srng-clayfin/project/issues"
+  },
+  "homepage": "https://github.com/srng-clayfin/project#readme",
+  "description": ""
+}
