@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import '../App.css';
 import { Main } from './/Main';
 import { userContext } from "../App";
+import { Dice } from './Dice';
 
 function Game(p) 
 {     
@@ -19,6 +20,9 @@ function Game(p)
 
   const [diceuser,setDiceUser] = useState(user1);
 
+  
+  const [img, setImg] = useState(1);
+  
   const playerWin = (p) =>
   {
     alert(p+"Win 👑");
@@ -29,7 +33,12 @@ function Game(p)
 
     useEffect(
       ()=>{    
-            
+        
+        if(count1!=0)
+        {
+          setImg(count1);  
+        }
+
         if(diceuser == user1)
         {
           setPlace1(count1+place1);  
@@ -55,13 +64,13 @@ function Game(p)
 
   const handledice = () =>
   {
-      diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2)
+      diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
 
-      setFlag(flag===true ? false : true);   
-      
+      setFlag(flag===true ? false : true);    
 
       setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
-      
+          
+
       if(place1 === 69)
       {
         setPlace1(88);
@@ -121,11 +130,13 @@ function Game(p)
         setPlace2(1);
       }
     
-    
-    //==================================================
-    
   }
 
+  
+  
+  const diceImage = require(`../assets/${img}.png`);
+
+  console.log(img)
   
   
   return (
@@ -137,8 +148,8 @@ function Game(p)
         
         <div className='score'>
           <h3>Score Board</h3>
-          <p><h4>{user1} 😈 :  {place2-1} </h4></p>
-          <p><h4>{user2} 🎅 :  {place1-1}</h4></p>
+          <h4><p>{user1} 😈 :  {place2-1} </p></h4>
+          <h4><p>{user2} 🎅 :  {place1-1}</p></h4>
         </div>
         <h3>{diceuser}</h3>
         <button onClick={() => handledice()}>
@@ -147,11 +158,17 @@ function Game(p)
         <br />
         <br />       
 
-          <div className='count'>
+        {/* <Dice count={count1} /> */}
+
+          {/* <div className='count'>
             <h1> 
               {count1}
             </h1>
-          </div>       
+          </div>  */}
+
+          <div>
+            <img src={diceImage} />
+          </div>
       </div>
     </div>
   );
