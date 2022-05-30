@@ -13,12 +13,12 @@ const Block = (p) =>
                 :
                 p.user1 === p.value ? 
                     <h3 style={{opacity: "1000%" }}>
-                        😈
+                        🎅
                     </h3>
                 : 
                 p.user2 == p.value ?
                     <h3 style={{opacity: "1000%" }}>
-                        🎅
+                        😈
                     </h3>
                 :
                     <h3>

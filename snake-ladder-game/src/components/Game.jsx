@@ -8,7 +8,6 @@ function Game(p)
 
   const {p1,setP1,p2,setP2} = useContext(userContext) 
 
-
   const [count1,setCount1]  = useState(0);
   const [place1,setPlace1] = useState(1);
   const [place2,setPlace2] = useState(1);
@@ -18,8 +17,7 @@ function Game(p)
 
   const [flag,setFlag] = useState(true); 
 
-  const [diceuser,setDiceUser] = useState(user2);
-
+  const [diceuser,setDiceUser] = useState(user1);
 
   const playerWin = (p) =>
   {
@@ -43,11 +41,11 @@ function Game(p)
 
         if(place1 >= 100)
         {
-          playerWin(user1);
+          playerWin(user2);
         }
         else if(place2 >= 100)
         {
-          playerWin(user2);
+          playerWin(user1);
         }
 
       },[flag]
@@ -57,7 +55,7 @@ function Game(p)
 
   const handledice = () =>
   {
-      diceuser==user1 ? setDiceUser(user2) : setDiceUser(user1)
+      diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2)
 
       setFlag(flag===true ? false : true);   
       
@@ -136,19 +134,22 @@ function Game(p)
       <Main place1={place1} place2={place2}/>
 
       <div className='button'>
+        
+        <div className='score'>
+          <h3>Score Board</h3>
+          <p><h4>{user1} 😈 :  {place2-1} </h4></p>
+          <p><h4>{user2} 🎅 :  {place1-1}</h4></p>
+        </div>
+        <h3>{diceuser}</h3>
         <button onClick={() => handledice()}>
-            {diceuser}
+            Click
         </button>
         <br />
-        <br />
-        <br />
-          <div className='count'>
-            <h1>
-            
-            {/* {flag==true? user2 : user1}
-            <br /> */}
+        <br />       
 
-            {count1}
+          <div className='count'>
+            <h1> 
+              {count1}
             </h1>
           </div>       
       </div>
