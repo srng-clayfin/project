@@ -6,28 +6,35 @@ import { Dice } from './Dice';
 
 function Game(p) 
 {     
-
   const {p1,setP1,p2,setP2} = useContext(userContext) 
 
   const [count1,setCount1]  = useState(0);
   const [place1,setPlace1] = useState(1);
   const [place2,setPlace2] = useState(1);
-  
   const [user1,setUser1] = useState(p1);
   const [user2,setUser2] = useState(p2);
-
   const [flag,setFlag] = useState(true); 
-
   const [diceuser,setDiceUser] = useState(user1);
-
-  
   const [img, setImg] = useState(1);
   
   const playerWin = (p) =>
   {
-    alert(p+"Win 👑");
+    alert(p+" Win 👑");
     setPlace1(0);
     setPlace2(0);      
+  }
+
+
+  const notP1 = () =>
+  {    
+      if(!p1)
+      {
+        setUser1("Player 1");   
+      }
+      if(!p2)
+      {
+        setUser2("Player 2");   
+      }
   }
 
 
@@ -65,11 +72,10 @@ function Game(p)
   const handledice = () =>
   {
       diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
-
       setFlag(flag===true ? false : true);    
-
       setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
           
+      notP1();
 
       if(place1 === 69)
       {
@@ -136,9 +142,8 @@ function Game(p)
   
   const diceImage = require(`../assets/${img}.png`);
 
-  console.log(img)
-  
-  
+  // console.log(img);
+
   return (
     <div className="Game">
 
