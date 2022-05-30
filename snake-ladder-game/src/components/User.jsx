@@ -1,17 +1,18 @@
-import { useState } from "react"
+import { useContext } from "react"
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../App";
 
 export const User = () =>
 {
-    const [user1,setUser1] = useState("");
-    const [user2,setUser2] = useState("");
+    const {p1,setP1,p2,setP2} = useContext(userContext) 
 
-    console.log(user1+"   "+user2);    
+      
 
-   const nav = useNavigate()
+    const nav = useNavigate()
 
     const handleUSers = () =>
     {        
+        console.log(p1+"   "+p2);  
         nav("/game");
     }
 
@@ -20,10 +21,10 @@ export const User = () =>
             <div>
                 <h3>Enter Player Details...</h3>
                 <br />
-                    <input type={"text"} placeholder={"Enter Player-1 Name : "}  onChange={(e) => {setUser1(e.target.value) }}/>                
+                    <input type={"text"} placeholder={"Enter Player-1 Name : "}  onChange={(e) => {setP1(e.target.value) }}/>                
                 <br />
                 <br />                
-                    <input type={"text"} placeholder={"Enter Player-2 Name : "}  onChange={(e) => {setUser2(e.target.value) }}/>                
+                    <input type={"text"} placeholder={"Enter Player-2 Name : "}  onChange={(e) => {setP2(e.target.value) }}/>                
                 <br />
                 <br />     
                     <button onClick={handleUSers}>

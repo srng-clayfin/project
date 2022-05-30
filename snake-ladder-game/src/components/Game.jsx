@@ -1,19 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import '../App.css';
 import { Main } from './/Main';
+import { userContext } from "../App";
 
 function Game(p) 
 {     
+
+  const {p1,setP1,p2,setP2} = useContext(userContext) 
+
+
   const [count1,setCount1]  = useState(0);
   const [place1,setPlace1] = useState(1);
   const [place2,setPlace2] = useState(1);
   
-  const [user1,setUser1] = useState("Player 1");
-  const [user2,setUser2] = useState("Player 2");
+  const [user1,setUser1] = useState(p1);
+  const [user2,setUser2] = useState(p2);
 
   const [flag,setFlag] = useState(true); 
 
-  const [diceuser,setDiceUser] = useState(user1);
+  const [diceuser,setDiceUser] = useState(user2);
 
 
   const playerWin = (p) =>
@@ -48,8 +53,7 @@ function Game(p)
       },[flag]
     );
     
-    
-  
+
 
   const handledice = () =>
   {
@@ -89,9 +93,6 @@ function Game(p)
         setPlace1(1);
       }
 
-      //==================================================================
-    
-     // setCount2(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
       
       if(place2 === 69)
       {
