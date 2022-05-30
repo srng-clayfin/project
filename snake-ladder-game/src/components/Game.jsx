@@ -16,19 +16,14 @@ function Game(p)
   const [diceuser,setDiceUser] = useState(user1);
 
 
-  if(place1 === 100)
+  const playerWin = (p) =>
   {
-    alert(user1+" Win 👑");
+    alert(p+"Win 👑");
     setPlace1(0);
-    setPlace2(0);
+    setPlace2(0);      
   }
-  else if(place2 === 100)
-  {
-    alert(user2+" Win 👑");
-    setPlace1(0);
-    setPlace2(0);
-  }
-  
+
+
     useEffect(
       ()=>{    
             
@@ -39,6 +34,15 @@ function Game(p)
         else
         {
           setPlace2(count1+place2);
+        }   
+
+        if(place1 >= 100)
+        {
+          playerWin(user1);
+        }
+        else if(place2 >= 100)
+        {
+          playerWin(user2);
         }
 
       },[flag]
