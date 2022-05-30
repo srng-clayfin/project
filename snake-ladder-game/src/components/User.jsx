@@ -7,11 +7,13 @@ export const User = () =>
     const [user1,setUser1] = useState("");
     const [user2,setUser2] = useState("");
 
+    
+
     const nav = useNavigate()
 
     const handleUSers = () =>
-    {
-        nav("/game")
+    {        
+        nav("/game");
     }
 
     return(

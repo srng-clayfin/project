@@ -1,20 +1,15 @@
-
 import { useEffect, useState } from 'react';
 import '../App.css';
 import { Main } from './/Main';
 
 function Game(p) 
-{ 
-
-  console.log(p.user1+"  "+p.user2);
-  
+{     
   const [count1,setCount1]  = useState(0);
-  const [count2,setCount2]  = useState(0);  
   const [place1,setPlace1] = useState(1);
   const [place2,setPlace2] = useState(1);
   
-  const [user1,setUser1] = useState("Sarang");
-  const [user2,setUser2] = useState("Swati");
+  const [user1,setUser1] = useState("Player 1");
+  const [user2,setUser2] = useState("Player 2");
 
   const [flag,setFlag] = useState(true); 
 
@@ -23,11 +18,15 @@ function Game(p)
 
   if(place1 === 100)
   {
-    alert(user1+" Win 👑")
+    alert(user1+" Win 👑");
+    setPlace1(0);
+    setPlace2(0);
   }
   else if(place2 === 100)
   {
-    alert(user2+" Win 👑")
+    alert(user2+" Win 👑");
+    setPlace1(0);
+    setPlace2(0);
   }
   
     useEffect(
