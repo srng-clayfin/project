@@ -1,4 +1,4 @@
- import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import '../App.css';
 import { Main } from './/Main';
 import { userContext } from "../App";
@@ -8,6 +8,7 @@ function Game(p)
 {     
   const {p1,setP1,p2,setP2} = useContext(userContext) 
   const nav = useNavigate()
+  
   const [count1,setCount1]  = useState(0);
   const [place1,setPlace1] = useState(1);
   const [place2,setPlace2] = useState(1);
@@ -39,7 +40,6 @@ function Game(p)
         setUser2("Player 2");   
       }
   }
-
 
     useEffect(
       ()=>{   
@@ -91,7 +91,6 @@ function Game(p)
       setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
       
       //setRepeat(repeat===true ? false : true);           
-
 
       notP1();
 
