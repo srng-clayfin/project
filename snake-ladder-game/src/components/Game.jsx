@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import '../App.css';
 import { Main } from './/Main';
 import { userContext } from "../App";
-import { Dice } from './Dice';
 
 function Game(p) 
 {     
@@ -16,7 +15,9 @@ function Game(p)
   const [flag,setFlag] = useState(true); 
   const [diceuser,setDiceUser] = useState(user1);
   const [img, setImg] = useState(1);
-  
+  const [repeat, setRepeat] = useState(true);
+  const [resultuser,setResultuser] = useState("")
+
   const playerWin = (p) =>
   {
     alert(p+" Win 👑");
@@ -39,7 +40,7 @@ function Game(p)
 
 
     useEffect(
-      ()=>{    
+      ()=>{   
         
         if(count1!=0)
         {
@@ -53,7 +54,19 @@ function Game(p)
         else
         {
           setPlace2(count1+place2);
-        }   
+        }        
+
+      },[flag]
+    );
+    
+    useEffect(
+      ()=>{
+        
+        if(count1 == 6)
+        {
+          diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
+          setFlag(flag===true ? false : true);  
+        } 
 
         if(place1 >= 100)
         {
@@ -64,17 +77,20 @@ function Game(p)
           playerWin(user1);
         }
 
-      },[flag]
-    );
-    
+      },[repeat]
+    )
 
 
   const handledice = () =>
   {
       diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
       setFlag(flag===true ? false : true);    
+
       setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
-          
+      
+      setRepeat(repeat===true ? false : true);           
+
+
       notP1();
 
       if(place1 === 69)
@@ -141,8 +157,7 @@ function Game(p)
   
   
   const diceImage = require(`../assets/${img}.png`);
-
-  // console.log(img);
+ 
 
   return (
     <div className="Game">
@@ -162,15 +177,8 @@ function Game(p)
         </button>
         <br />
         <br />       
-
-        {/* <Dice count={count1} /> */}
-
-          {/* <div className='count'>
-            <h1> 
-              {count1}
-            </h1>
-          </div>  */}
-
+          <h3>
+          </h3>
           <div>
             <img src={diceImage} />
           </div>
