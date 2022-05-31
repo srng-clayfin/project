@@ -17,7 +17,7 @@ function Game(p)
   const [diceuser,setDiceUser] = useState(user1);
   const [img, setImg] = useState(1);
   const [repeat, setRepeat] = useState(true);
-  const [resultuser,setResultuser] = useState("")
+  const [previous,setPrevious] = useState(0)
 
   const playerWin = (p) =>
   {
@@ -87,10 +87,10 @@ function Game(p)
   {
       diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
       setFlag(flag===true ? false : true);    
-
+      setPrevious(count1);
       setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
       
-      setRepeat(repeat===true ? false : true);           
+      //setRepeat(repeat===true ? false : true);           
 
 
       notP1();
@@ -153,9 +153,20 @@ function Game(p)
       {
         setPlace2(1);
       }
-    
   }
 
+  const previousPlace = () =>
+  {
+        if(diceuser == user1)
+        {
+          setPlace1(place1-previous);  
+        }
+        else
+        {
+          setPlace2(place2-previous);
+        }
+        diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
+  }  
   
   
   const diceImage = require(`../assets/${img}.png`);
@@ -169,6 +180,11 @@ function Game(p)
       <div className='button'>
         
         <div className='score'>
+        
+        <button onClick={previousPlace}>
+          Previous
+        </button>
+
           <h3>Score Board</h3>
           <h4><p>{user1} 😈 :  {place2-1} </p></h4>
           <h4><p>{user2} 🎅 :  {place1-1}</p></h4>
