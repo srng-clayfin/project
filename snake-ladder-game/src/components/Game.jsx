@@ -4,7 +4,7 @@ import { Main } from './/Main';
 import { userContext } from "../App";
 import { useNavigate } from 'react-router-dom';
 
-function Game(p) 
+export const Game = (p) =>
 {
 
   const {p1,setP1,p2,setP2} = useContext(userContext) 
@@ -99,6 +99,7 @@ function Game(p)
       setDnm(true)
       diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
       setFlag(flag===true ? false : true);    
+
       setPrevious(count1);
       setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
       
@@ -124,13 +125,13 @@ function Game(p)
       }
       else if(place1 === 72)
       {
-        setPlace1(28);
+        setPlace1(29);
       }    
       else if(place1 === 28)
       {
-        setPlace1(72);
+        setPlace1(73);
       }
-      else if(place1 === 89 || place1 ===46 || place1 ===97 )
+      else if(place1 === 89 || place1 === 46 || place1 === 97 )
       {
         setPlace1(1);
       }
@@ -215,5 +216,3 @@ function Game(p)
     </div>
   );
 }
-
-export default Game;

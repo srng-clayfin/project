@@ -27,14 +27,14 @@ code {
 
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
-
+  gap: 1px;
 }
 
 
 .block
 {
-  height: 58px;
-  width: 68px;
+  height: 57px;
+  width: 67px;
 
   opacity: 60%;
   
