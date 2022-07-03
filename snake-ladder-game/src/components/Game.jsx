@@ -216,26 +216,28 @@ export const Game = (p) =>
 
       <div className='button'>
         
-        <div className='score'>
         
-        <button onClick={previousPlace}>
+        {/* <button onClick={previousPlace}>
           Previous
-        </button>
+        </button> */}
 
+        <div className='score'>
           <h3>Score Board</h3>
           <h4><p>{user1} 😈 :  {place2-1} </p></h4>
           <h4><p>{user2} 🎅 :  {place1-1}</p></h4>
         </div>
-        <h3>{diceuser}</h3>
-        <button onClick={() => handledice()}>
+        <h3>{diceuser+" Turn "}</h3>
+
+        {/* <button onClick={() => handledice()}>
             Click
         </button>
         <br />
         <br />       
           <h3>
             {dnm ? diceuser == user1 ? user2+" points" : user1+" points" : null} 
-          </h3>
-          <div>
+          </h3> */}
+          
+          <div onClick={() => handledice()}>
             <img src={diceImage} />
           </div>
       </div>
