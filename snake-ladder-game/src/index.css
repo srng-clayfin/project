@@ -49,7 +49,7 @@ code {
   height: 57px;
   width: 67px;
 
-  opacity: 60%;
+  /* opacity: 90%; */
   
   overflow: hidden;
   border: 1px solid black;
@@ -57,7 +57,7 @@ code {
 
 .block > h3
 {
-  opacity: 160%;
+  opacity:60%
 }
 
 .button
