@@ -107,63 +107,89 @@ export const Game = (p) =>
 
       notP1();
 
-      if(place1 === 69)
+      if(place1 === 96)
       {
-        setPlace1(88);
+        setPlace1(49);
       }    
-      else if(place1 === 67)
+      else if(place1 === 50)
       {
-        setPlace1(48);
+        setPlace1(79);
       }
-      else if(place1 === 14)
+      else if(place1 === 29)
       {
-        setPlace1(54);
+        setPlace1(58);
       }
-      else if(place1 === 42)
+      else if(place1 === 37)
       {
-        setPlace1(11);
+        setPlace1(8);
       }
-      else if(place1 === 72)
+      else if(place1 === 7)
       {
-        setPlace1(29);
+        setPlace1(56);
       }    
-      else if(place1 === 28)
+      else if(place1 === 75)
       {
-        setPlace1(73);
+        setPlace1(32);
       }
-      else if(place1 === 89 || place1 === 46 || place1 === 97 )
+      else if(place1 === 54)
+      {
+        setPlace1(83);
+      }
+      else if(place1 === 94)
+      {
+        setPlace1(71);
+      }
+      else if(place1 === 12)
+      {
+        setPlace1(41);
+      }
+      else if(place1 === 23)
       {
         setPlace1(1);
       }
 
-            if(place2 === 69)
-            {
-              setPlace2(88);
-            }    
-            else if(place2 === 67)
-            {
-              setPlace2(48);
-            }
-            else if(place2 === 14)
-            {
-              setPlace2(54);
-            }
-            else if(place2 === 42)
-            {
-              setPlace2(11);
-            }
-            else if(place2 === 72)
-            {
-              setPlace2(28);
-            }    
-            else if(place2 === 28)
-            {
-              setPlace2(72);
-            }
-            else if(place2 === 89 || place2 ===46 || place2 ===97 )
-            {
-              setPlace2(1);
-            }
+        if(place2 === 96)
+        {
+          setPlace2(49);
+        }    
+        else if(place2 === 50)
+        {
+          setPlace2(79);
+        }
+        else if(place2 === 29)
+        {
+          setPlace2(58);
+        }
+        else if(place2 === 37)
+        {
+          setPlace2(8);
+        }
+        else if(place2 === 7)
+        {
+          setPlace2(56);
+        }    
+        else if(place2 === 75)
+        {
+          setPlace2(32);
+        }
+        else if(place2 === 54)
+        {
+          setPlace2(83);
+        }
+        else if(place2 === 94)
+        {
+          setPlace2(71);
+        }
+        else if(place2 === 12)
+        {
+          setPlace2(41);
+        }
+        else if(place2 === 23)
+        {
+          setPlace2(1);
+        }
+
+            
   }
 
   const previousPlace = () =>
