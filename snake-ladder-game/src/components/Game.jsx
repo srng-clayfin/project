@@ -234,7 +234,7 @@ export const Game = (p) =>
         <br />
         <br />       
           <h3>
-            {dnm ? diceuser == user1 ? user2+" points" : user1+" points" : null} 
+             {dnm ? diceuser == user1 ? user2+" points" : user1+" points" : null} 
           </h3> */}
 
           <div onClick={() => handledice()} className='dice'>
