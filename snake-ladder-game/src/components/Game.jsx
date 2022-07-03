@@ -236,8 +236,8 @@ export const Game = (p) =>
           <h3>
             {dnm ? diceuser == user1 ? user2+" points" : user1+" points" : null} 
           </h3> */}
-          
-          <div onClick={() => handledice()}>
+
+          <div onClick={() => handledice()} className='dice'>
             <img src={diceImage} />
           </div>
       </div>

@@ -104,39 +104,25 @@ code {
   background-color: rgb(253, 246, 235);
   width: 250px;
   border: 5px solid rgb(97, 183, 97);
+
+  margin-bottom: 70px;
 }
 
+.dice
+{
+
+  height: 100px;
+  width: 100px;
+
+  background-color: rgb(24, 24, 24);
+  
+  border-radius: 13px;
 
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.dice > img
+{
+  height: 100%;
+  width: 100%;
+}
