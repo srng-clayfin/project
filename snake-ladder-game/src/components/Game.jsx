@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import '../App.css';
 import { Main } from './/Main';
 import { userContext } from "../App";
@@ -9,6 +9,8 @@ export const Game = (p) =>
 
   const {p1,setP1,p2,setP2} = useContext(userContext) 
   const nav = useNavigate()
+
+  const srng = useRef(1);
   
   const [count1,setCount1]  = useState(0);
   const [place1,setPlace1] = useState(1);
@@ -68,7 +70,7 @@ export const Game = (p) =>
               {
                 setPlace2(count1+place2);
               }
-        
+              
       },[flag]
     );
     
@@ -92,21 +94,9 @@ export const Game = (p) =>
 
       },[repeat]
     )
-  
-  const [dnm, setDnm] = useState(false)
-  const handledice = () =>
-  {
-      setDnm(true)
-      diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
-      setFlag(flag===true ? false : true);    
 
-      setPrevious(count1);
-      setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
-      
-      //setRepeat(repeat===true ? false : true);           
-
-      notP1();
-
+    const player1 = () =>
+    {
       if(place1 === 96)
       {
         setPlace1(49);
@@ -147,8 +137,11 @@ export const Game = (p) =>
       {
         setPlace1(1);
       }
+    }
 
-        if(place2 === 96)
+    const player2 = () =>
+    {
+      if(place2 === 96)
         {
           setPlace2(49);
         }    
@@ -188,6 +181,25 @@ export const Game = (p) =>
         {
           setPlace2(1);
         }
+    }
+  
+  const [dnm, setDnm] = useState(false)
+  const handledice = () =>
+  {
+      setDnm(true)
+      diceuser==user2 ? setDiceUser(user1) : setDiceUser(user2);
+      setFlag(flag===true ? false : true);    
+
+      setPrevious(count1);
+      setCount1(Math.floor(Math.random() * (6 - 1 + 1) + 1));  
+      
+      //setRepeat(repeat===true ? false : true);           
+
+      notP1();
+      player1()
+      player2()
+
+        
 
             
   }

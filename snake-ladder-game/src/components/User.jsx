@@ -18,18 +18,20 @@ export const User = () =>
 
     return(
         <div className="App">
-            <div>
+            <div>                
                 <h3>Enter Player Details...</h3>
+                <form onSubmit={handleUSers}>
                 <br />
-                    <input type={"text"} placeholder={"Enter Player-1 Name : "}  onChange={(e) => {setP1(e.target.value) }}/>                
+                    <input type={"text"} placeholder={"Enter Player-1 Name : "}  onChange={(e) => {setP1(e.target.value) }} required/>                
                 <br />
                 <br />                
-                    <input type={"text"} placeholder={"Enter Player-2 Name : "}  onChange={(e) => {setP2(e.target.value) }}/>                
+                    <input type={"text"} placeholder={"Enter Player-2 Name : "}  onChange={(e) => {setP2(e.target.value) }} required/>                
                 <br />
                 <br />     
-                    <button onClick={handleUSers}>
+                    <button type="submit">
                             Start Game
                     </button>                
+                </form>
             </div>
         </div>
     )
